@@ -1,0 +1,29 @@
+/**
+Theme Name: Prueba1
+Theme URI: https://devalpo.cl
+Author: Agustin Romero Salazar
+Author URI: https://devalpo.cl
+Description: 
+Version: 1.0.0
+Text Domain: prueba
+License: GNU v3 or Later
+
+**/
+
+.wp-block-latest-posts__list ul{
+    list-style: disc inside;
+}
+
+.wp-block-latest-posts__post-title li a {
+    display: inline-block;
+    color: blue;
+}
+
+.navbar-collapse {
+    -ms-flex-preferred-size: 100%;
+    /* flex-basis: 100%; */
+    -ms-flex-positive: 1;
+    flex-grow: 0;
+    -ms-flex-align: center;
+    /* align-items: center; */
+}
