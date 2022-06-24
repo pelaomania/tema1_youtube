@@ -12,9 +12,9 @@
   </head>
   <body <?php body_class(); ?>>
     <!-- Menú -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <div class="container">
-        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">LogoCorporativo</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -26,6 +26,18 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        
+        <?php 
+        
+          if ( has_custom_logo() ) {
+                the_custom_logo( );
+        }
+        
+        ?>  
+
+    </a>
 
         <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav ml-auto">

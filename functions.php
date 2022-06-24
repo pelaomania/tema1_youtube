@@ -1,5 +1,7 @@
 <?php
 
+
+
 function register_navwalker(){
 	require_once get_template_directory() . '/template-parts/navbar.php';
 }
@@ -23,9 +25,11 @@ function tema1_agregar_setup(){
     // Soporte para imágenes destacadas
     if ( function_exists( 'add_theme_support' ) ) {
         add_theme_support( 'post-thumbnails' );
+       // add_theme_support( 'custom-logo' );
     }
 
     add_theme_support('title-tag');   
+    
 }
 
 add_action( 'after_setup_theme', 'tema1_agregar_setup' );
@@ -62,15 +66,18 @@ add_action( 'after_setup_theme', 'tema1_agregar_setup' );
    }
 add_action( 'init', 'tema1_registrar_menus' );
   
-// Agrega el logo a la administración de wordpress 
-function tema1_registrar_logo() {
-  $defaults = array(
-  'height'      => 150,
-  'width'       => 250,
-  'flex-height' => false, // <-- setting both flex-height and flex-width to false maintains an aspect ratio
-  'flex-width'  => false
-  );
-  add_theme_support( 'custom-logo', $defaults );
- }
- // call the function in the hook
- add_action( 'after_setup_theme', 'tema1_registrar_logo' );
+function config_custom_logo() {
+        
+    $defaults = array(
+        'height' => 20,
+        'width' => 20,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array(),
+    );
+
+    add_theme_support( 'custom-logo' , $defaults );
+
+}
+
+add_action( 'after_setup_theme' , 'config_custom_logo' );
